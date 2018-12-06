@@ -1,0 +1,79 @@
+.requireList{
+  color: white;
+  font-size: 20px;
+  font-family:'Microsoft YaHei';
+  float:left;
+  margin-left: 3%;
+  margin-top:3px;
+  text-decoration-line: none;
+}
+.myRequirement{
+  color: white;
+  font-size: 20px;
+  font-family:'Microsoft YaHei';
+  float:left;
+  margin-left: 5%;
+  margin-top: 3px;
+  text-decoration-line: none;
+}
+.login{
+  color: white;
+  font-size: 16px;
+  font-family:'Microsoft YaHei';
+  float:left;
+  margin-left: 37%;
+  margin-top: 3px;
+  text-decoration-line: none;
+}
+.homePageLogin{
+  color: white;
+  font-size: 16px;
+  font-family:'Microsoft YaHei';
+  float:left;
+  margin-left: 62%;
+  margin-top: 3px;
+  text-decoration-line: none;
+}
+.homePageUserName{
+  color: white;
+  font-size: 16px;
+  font-family:'Microsoft YaHei';
+  float:left;
+  margin-left: 60%;
+  margin-top: 3px;
+}
+.logo{
+ height: 75px;
+ width: 180px;
+  float: left;
+  margin-left: 8%;
+}
+.userName{
+  color: white;
+  font-size: 16px;
+  font-family:'Microsoft YaHei';
+  float:left;
+  margin-left: 40%;
+  margin-top: 3px;
+}
+.cancel {
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 63px;
+  right: 11%;
+  top:10%;
+  border: none;
+  background: #ffffff;
+  line-height: 30px;
+}
+
+.cancel:after{
+  position: absolute;
+  top: -8%;
+  content: '';
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+}
+

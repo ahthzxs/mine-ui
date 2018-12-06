@@ -1,0 +1,15 @@
+.links{
+  color: white;
+  font-size: 20px ;
+  font-family: "Microsoft YaHei UI" ;
+  float: left ;
+  margin-left: 15% ;
+  margin-top: 18px ;
+  text-decoration-line: none;
+}
+.copyright{
+  margin-left: 38%;
+  color:white;
+  font-size: 14px;
+  font-family: "Microsoft YaHei UI";
+}

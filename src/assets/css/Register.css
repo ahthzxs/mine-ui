@@ -1,0 +1,97 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.body{
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+  background: url("../images/u234.jpg") no-repeat;
+  background-size: cover;
+  color: #000;
+}
+.register_container{
+  width: 440px;
+  height: 338px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -169px;
+  margin-left: -220px;
+  /*background-color: aqua;*/
+  background-color: #fff;
+}
+.register_form{
+  width: 310px;
+  height: 298px;
+  margin: 20px auto;
+  /*background-color: blueviolet;*/
+  font-size: 13px;
+}
+.register_title{
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding-top: 10px;
+}
+.error_info{
+  height: 20px;
+  color: red;
+  margin-bottom: 10px;
+  /*background-color: aquamarine;*/
+}
+.register_content{
+  width: 310px;
+  height: 190px;
+}
+.register_content a{
+  float: right;
+}
+.register_content input{
+  margin-left: 15px;
+  width: 218px;
+  border: 0px;
+  outline: none;
+}
+.register_content label{
+  margin-left: 15px;
+  color: #757575;
+  display: none;
+}
+.register_content_next{
+  width: 310px;
+  height: 190px;
+  display: none;
+}
+.register_content_next input{
+  margin-left: 15px;
+  width: 218px;
+  border: 0px;
+  outline: none;
+}
+.gender_radio{
+  font-size: 13px;
+  color: #757575;
+}
+.gender_radio label{
+  margin-left: 15px;
+}
+.register_content_next input[name="gender"] {
+  width: 20px;
+}
+.register_btn{
+  display: none;
+  float: left;
+}
+
+.register_btn button, .btn_next button {
+  width: 108px;
+  height: 32px;
+  float: right;
+  line-height: 32px;
+  background-color: #52ACF6;
+  border: 0px;
+  color: #fff;
+  cursor: pointer;
+}
+

@@ -1,0 +1,124 @@
+/*body{*/
+/*background-image: url("../images/bgi.jpg");*/
+/*background-position: center center;*/
+/*background-repeat: no-repeat;*/
+/*background-size:100% 100%;*/
+/*}*/
+.personalBread{
+  margin-top: 10px;
+  margin-left: 100px;
+}
+.ant-breadcrumb-separator{
+  width: 0;
+  height: 0;
+  border-left: 10px solid #000000;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  display: inline-block;
+}
+.ant-breadcrumb a{
+  color: #ffffff;
+  font-size: 18px;
+  font-family: 微软雅黑;
+  font-weight: bold;
+}
+/*.infoBox{*/
+/*width: 70%;*/
+/*}*/
+/*.infoBox>div{*/
+/*width: 100px;*/
+/*display: inline;*/
+/*}*/
+.infoBox p{
+  display: inline-block;
+  background-color: #F2F2F2;
+  width:220px;
+  text-align: right;
+  padding-right: 90px;
+  border: 2px solid #ECECEC;
+}
+.iconUpdate{
+  float: left;
+}
+.iconUpdateAndState{
+  display: inline;
+  width: 100px;
+}
+.disabledInput{
+  disabled: "disabled";
+}
+.ant-input,.tel{
+  height: 50px;
+  width: 200px;
+  outline: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  border-width: 1px;
+  border-color: #666;
+}
+
+.titleInfo{
+  font-size: 18px;
+  font-family: 微软雅黑;
+  color: #8F8F8F;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+}
+.ant-tabs-nav-scroll{
+  height: 800px;
+
+}
+.ant-tabs-tab{
+  border-right-width: 0;
+  text-align: center;/*居中无效*/
+}
+.ant-tabs-tab-active{
+  color: #ffffff;/*active的字不能变白，还有:hover无效*/
+  border-right-width: 0;/*右边的线去不掉*/
+}
+
+.ant-tabs-tab:hover{
+  color: #ffffff;/*hover上去字体颜色也不变 无效*/
+}/*
+.ant-tabs-tab:first-child{
+  height: 1000px;
+}
+
+.ant-tabs-nav .ant-tabs-tab-active{
+  color: #ffffff;
+}
+.ant-tabs-tab-active .ant-tabs-tab:hover{
+  color: #ffffff;
+}*/
+
+.divInline{
+  display: inline-block;
+}
+
+.ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar{
+  width:240px;
+
+}
+.ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar .ant-tabs-tab{
+  text-align: center;/*基本信息密码修改的居中无效*/
+  padding-right: 100px;
+
+}
+.ant-form-inline .ant-form-item{
+  margin-right: 0px;/*无效 这里是input框右边的margin*/
+}
+
+.iconPosition{
+  position: absolute;
+  left: 80px;
+  top: 50px;
+
+}
+.uploadImg{
+  margin-left: 400px;
+}
+
+
+
+
