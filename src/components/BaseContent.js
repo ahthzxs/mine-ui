@@ -6,11 +6,31 @@ import { Upload } from 'antd';
 import reqwest from 'reqwest';
 import moment from 'moment';
 import $ from "jquery";
+import { LocaleProvider } from 'antd';
+import zh_CN from 'antd/lib/locale-provider/zh_CN';
+import 'moment/locale/zh-cn';
 // import ReactDOM from 'react-dom';
 
  function MyURLEncoder(url) {
   return url.replace('[','').replace(']','');
 }
+
+Date.prototype.Format = function (fmt) { //author: meizz 
+    var o = {
+        "M+": this.getMonth() + 1, //月份 
+        "d+": this.getDate(), //日 
+        "h+": this.getHours(), //小时 
+        "m+": this.getMinutes(), //分 
+        "s+": this.getSeconds(), //秒 
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+        "S": this.getMilliseconds() //毫秒 
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
+
 function onChange(date, dateString) {
   console.log(date, dateString);
 }
@@ -162,12 +182,12 @@ const columns = [{
 
   {
     title: '现居地',
-    dataIndex: 'current_residence',
+    dataIndex: 'currentResidence',
   },
 
   {
     title: '家庭地址',
-    dataIndex: 'home_address',
+    dataIndex: 'homeAddress',
   },
 
   {
@@ -656,7 +676,7 @@ class SearchForm extends React.Component {
 
         <FormItem>
           <Button>
-            <a href="javascript:;" style={{ marginLeft: 8 }} onClick={showCreateOrEditWin}  popTitle={'添加'} id={''}>{'添加'}</a>
+            <a href="javascript:;" style={{ marginLeft: 0 }} onClick={showCreateOrEditWin}  popTitle={'添加'} id={''}>{'添加'}</a>
           </Button>
           <Button   style={{ marginLeft: 8 }}  onClick={this.handleBatchDelete}>
             删除
@@ -759,31 +779,31 @@ class SearchForm extends React.Component {
                          name={'name'}
                          defaultValue={user.name}
             />
-               性别: <input className={'ant-input'}
-              // style={{width:200 ,height:30}}
-                          name={'sex'}
-                          defaultValue={user.sex}
-            />
-
+               性别: 
+		
+			<select name={'sex'} defaultValue={user.sex} className={'ant-input'}>
+			      <option value="1">男</option>
+			      <option value="2">女</option>			    
+			    </select>
 
 
 
             家庭地址: <input className={'ant-input'}
-                       name={'home_address'}
-                       defaultValue={user.home_address} />
+                       name={'homeAddress'}
+                       defaultValue={user.homeAddress} />
 
 
 
 
               现居地: <input  className={'ant-input'}
-                           name={'current_residence'}
-                           defaultValue={user.current_residence} />
+                           name={'currentResidence'}
+                           defaultValue={user.currentResidence} />
 
 
 
               月薪:<input  className={'ant-input'}
-                         name={'monthly_salary'}
-                         defaultValue={user.monthly_salary} />
+                         name={'monthlySalary'}
+                         defaultValue={user.monthlySalary} />
 
 
 
@@ -819,14 +839,14 @@ class SearchForm extends React.Component {
             >
 
               家庭座机:<input  className={'ant-input'}
-                           name={'tel_home'}
-                           defaultValue={user.tel_home} />
+                           name={'telHome'}
+                           defaultValue={user.telHome} />
 
 
 
               工作座机:<input  className={'ant-input'}
-                           name={'tel_work'}
-                           defaultValue={user.tel_work} />
+                           name={'telWork'}
+                           defaultValue={user.telWork} />
 
                邮箱:<input  className={'ant-input'}
                           name={'email'}
@@ -837,7 +857,7 @@ class SearchForm extends React.Component {
 
               生日:<input  className={'ant-input'}
                          name={'birthday'}
-                         value={user.birthday} />
+                         value={new Date(user.birthday).Format("yyyy-MM-dd")} />
 
 
 
@@ -861,15 +881,26 @@ class SearchForm extends React.Component {
 
 
 
-              学历:<input  className={'ant-input'}
-                         name={'education'}
-                         defaultValue={user.education} />
+              学历:
 
+		<select name={'education'} defaultValue={user.education} className={'ant-input'} >
+			      <option value="1">文盲</option>
+			      <option value="2">小学</option>	
+			      <option value="3">初中</option>
+			      <option value="4">高中</option>
+				<option value="5">技校</option>
+				<option value="6">中专</option>
+				<option value="7">大专</option>
+				<option value="8">本科</option>
+				<option value="9">研究生</option>	
+				<option value="10">博士</option>
+				<option value="11">博士后</option>			    
+			    </select>
 
 
               毕业院校:<input  className={'ant-input'}
-                           name={'graduated_school'}
-                           defaultValue={user.graduated_school} />
+                           name={'graduatedSchool'}
+                           defaultValue={user.graduatedSchool} />
             </span>
 
 
@@ -892,7 +923,7 @@ class SearchForm extends React.Component {
 
               <Upload {...upload_avatar_props} style={{ marginLeft: 8 }}>
                 <img id="avatar"
-                     src={user.avater==''||user.avater==null?'/api/upload/img/blank.jpg':'/api'+user.avatar}
+                     src={(user.avater==''||user.avater==null)?('/api/upload/img/blank.jpg'):('/api'+user.avatar)}
                      //src={this.state.modal1Avatar}
                      width="200" height="211"
                      style={{ margin:'auto',border:'dashed #ccc 1px'}}
@@ -926,9 +957,16 @@ class SearchForm extends React.Component {
 
 
 
-              与我的亲属关系:<input  className={'ant-input'}
-                              name={'relationship'}
-                              defaultValue={user.relationship} />
+              与我的亲属关系: 
+			 
+			<select name={'relationship'} defaultValue={user.relationship}  className={'ant-input'} >
+			      <option value="1">家人</option>
+			      <option value="2">亲戚</option>
+			      <option value="3">朋友 </option>
+			      <option value="4">同事</option>
+			      <option value="5">陌生人</option>
+			    </select>
+
 
             </span>
 
